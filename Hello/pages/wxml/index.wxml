@@ -1,0 +1,5 @@
+<!--pages/wxml/index.wxml-->
+
+<view class='container'>
+  <text>时间: {{time}}</text>
+</view>

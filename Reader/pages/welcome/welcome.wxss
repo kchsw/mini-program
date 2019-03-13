@@ -1,0 +1,35 @@
+/* pages/welcome/welcome.wxss */
+page{
+  height: 100%;
+  background: #bad2da;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100rpx;
+}
+
+.avatar-image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 160rpx;
+}
+.uaer-name{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.moto{
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #405f89;
+  line-height: 80rpx;
+}
+.moto-container{
+  margin-top: 200rpx;
+  border: 1px solid #405f89;
+  height: 80rpx;
+  width: 200rpx;
+  border-radius: 5rpx;
+  text-align: center;  
+}
