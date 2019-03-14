@@ -1,19 +1,31 @@
 // pages/movies/movie-detail/movie-detail.js
+var app = getApp()
+import { Movie } from 'class/Movie.js';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    movie: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var movieId = options.id
+    var url = app.globalData.doubanBase +
+      "/v2/movie/subject/" + movieId
+    var movie = new Movie(url)
+    movie.getMovieData(movie => {
+      this.setData({
+        movie: movie
+      })
+    })
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -62,5 +74,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  viewMoviePostImg: function(event){
+    var src = event.currentTarget.dataset.src
+    wx.previewImage({
+      current: src,
+      urls: [src]
+    })
   }
 })

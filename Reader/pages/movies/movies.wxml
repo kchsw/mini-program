@@ -1,14 +1,14 @@
 <!--pages/movies/movies.wxml-->
 <import src="movie-list/movie-list.wxml" />
-<!-- <import src="movie-grid/movie-grid-template.wxml" /> -->
+<import src="movie-grid/movie-grid.wxml" />
 <view class="search">
   <icon type="search" class="search-img" size="13" color="#405f80"></icon>
   <input type="text" placeholder="血战钢锯岭、你的名字" 
   placeholder-class="placeholder" bindfocus="onBindFocus"
-  bindconfirm="onBindConfirm"/>
+  bindconfirm="onBindConfirm" value="{{inputValue}}"/>
   <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
 </view>
-<view class="container" wx:if="{{1}}">
+<view class="container" wx:if="{{containerShow}}">
   <view class="movies-template">
     <template is="movieListTemplate" data="{{...inTheaters}}" />
   </view>

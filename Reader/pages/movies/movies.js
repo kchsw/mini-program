@@ -11,8 +11,9 @@ Page({
     comingSoon: {},
     top250: {},
     searchResult: {},
-    containerShow: false,
-    searchPanelShow: false
+    containerShow: true,
+    searchPanelShow: false,
+    inputValiue: ''
   },
 
   /**
@@ -117,12 +118,46 @@ Page({
       movies: movies
     }
     this.setData(readyData)
+    wx.hideNavigationBarLoading()
   },
-
+  //更多
   onMoreTap: function(event){
     var category = event.currentTarget.dataset.category
     wx.navigateTo({
       url: "more-movie/more-movie?category=" + category,
+    })
+  },
+  //点击输入框
+  onBindFocus: function (event) {
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true
+    })
+  },
+  //取消搜索
+  onCancelImgTap: function (event) {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      searchResult: {}
+    })
+    this.setData({
+      'inputValue': ''
+    })
+  },
+  //输入确定
+  onBindConfirm: function(event){
+    var text = event.detail.value
+    var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text
+    wx.showNavigationBarLoading()
+    this.getMovieListData(searchUrl, "searchResult", "")
+  },
+  
+  // 点击电影详情
+  onMovieTap: function(event){
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: "movie-detail/movie-detail?id=" + movieId
     })
   }
 })

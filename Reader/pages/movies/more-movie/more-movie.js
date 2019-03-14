@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    movies: {},
+    movies: [],
     navigateTitle: "",
     requestUrl: "",
     totalCount: 0,
@@ -34,9 +34,7 @@ Page({
         dataUrl = app.globalData.doubanBase + "/v2/movie/top250";
         break;
     }
-    wx.setNavigationBarTitle({
-      title: this.data.navigateTitle
-    })
+    
     this.data.requestUrl = dataUrl
     util.http(dataUrl, this.processDoubanData)
   },
@@ -44,8 +42,10 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady: function (event) {
+    wx.setNavigationBarTitle({
+      title: this.data.navigateTitle
+    })
   },
 
   /**
@@ -89,6 +89,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 处理数据
   processDoubanData: function (moviesDouban) {
     var movies = []
     for (var idx in moviesDouban.subjects) {
@@ -107,9 +108,37 @@ Page({
       }
       movies.push(temp)
     }
-    
+    var totalMovies = this.data.movies.concat(movies)
+
     this.setData({
-      movies: movies
+      movies: totalMovies
+    })
+    this.data.totalCount += 20
+    wx.hideNavigationBarLoading()
+    wx.stopPullDownRefresh()
+
+  },
+  // 触底加载
+  onReachBottom: function(event){
+    var nextUrl = this.data.requestUrl +
+      "?start=" + this.data.totalCount + "&count=20";
+    util.http(nextUrl, this.processDoubanData)
+    wx.showNavigationBarLoading()
+  },
+  //上拉刷新
+  onPullDownRefresh: function (event) {
+    var refreshUrl = this.data.requestUrl +
+      "?star=0&count=20"
+    this.data.movies = []
+    this.data.totalCount = 0
+    util.http(refreshUrl, this.processDoubanData)
+    wx.showNavigationBarLoading()
+  },
+  // 点击电影详情
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: "../movie-detail/movie-detail?id=" + movieId
     })
   }
 })

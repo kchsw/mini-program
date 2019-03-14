@@ -1,12 +1,14 @@
 @import "../movie/movie.wxss";
 
 /*scroll-view*/
-.single-view-container{
-    float:left;
-    margin-bottom: 40rpx;
+
+.single-view-container {
+  float: left;
+  margin-bottom: 40rpx;
 }
 
-.grid-container{
-    height: 1300rpx;
-    margin:40rpx 0 40rpx 6rpx;
+.grid-container {
+  overflow: hidden;
+  padding: 40rpx 0 40rpx 6rpx;
+  background-color: #f2f2f2;
 }
