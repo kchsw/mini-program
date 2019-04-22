@@ -1,0 +1,8 @@
+/* pages/cart/cart.wxss */
+.cart{
+	text-align: center;
+}
+.cart-tip{
+	color: #ccc;
+	padding: 350rpx 0 200rpx;
+}

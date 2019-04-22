@@ -1,0 +1,20 @@
+<template name="goodsItem">
+	<view class="hotgoods-item">
+		<image class="hotgoods-image" src="{{image}}" mode="widthFix" style="width: 90%"></image>
+		<view class="hotgoods-name">
+			<text>{{name}}</text>
+		</view>
+		<view class="hotgoods-price">
+			<text>￥{{mallPrice}}</text>
+		</view>
+	</view>
+	<!-- <view class="hotgoods-item">
+		<image class="hotgoods-image" src="http://images.baixingliangfan.cn/compressedPic/20180415120500_6504.jpg" mode="widthFix" style="width: 90%"></image>
+		<view class="goods-name">
+			<text>美汁源果粒奶优水果饮料蜜桃450ml/瓶</text>
+		</view>
+		<view class="hotgoods-price">
+			<text>￥3.9</text>
+		</view>
+	</view> -->
+</template>

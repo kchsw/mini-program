@@ -1,0 +1,31 @@
+.goods-item{
+	display: inline-block;
+	width: 33.3333333%;	
+	text-align: center;
+	box-sizing: border-box;
+	padding: 5rpx;
+	box-sizing: border-box;
+	border-right: 1rpx solid #eee;
+	position: relative; 
+}
+.goods-image{
+	width: 90%;
+}
+.goods-name{
+	font-size: 22rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.goods-price{
+	font-size: 24rpx;
+}
+.line-price{
+	text-decoration-line: line-through;
+	color: #ccc;
+}
+.tag{
+	position: absolute;
+	right: 5rpx;
+	bottom: 70rpx;
+}

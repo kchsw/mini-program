@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/cart/cart",
+    "pages/category/category"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e5017d",
+    "navigationBarTitleText": "WxMall",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "van-tag": "/miniprogram_npm/vant-weapp/tag/index",
+    "van-row": "/miniprogram_npm/vant-weapp/row/index",
+    "van-col": "/miniprogram_npm/vant-weapp/col/index",
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
+    "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/images/tab/home-smile-line.png",
+        "selectedIconPath": "assets/images/tab/home-smile-fill.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "assets/images/tab/apps-line.png",
+        "selectedIconPath": "assets/images/tab/apps-fill.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "assets/images/tab/shopping-cart-line.png",
+        "selectedIconPath": "assets/images/tab/shopping-cart-fill.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "assets/images/tab/account-box-line.png",
+        "selectedIconPath": "assets/images/tab/account-box-fill.png"
+      }
+    ]
+  }
+}

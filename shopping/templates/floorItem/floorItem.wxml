@@ -1,0 +1,17 @@
+<template name="floorItem">
+	<view class="floor-item">
+		<view class="floor-title">
+			<text class="number">{{index+1}}F</text><text>- {{name}} -</text>
+		</view>
+		<!-- <view class="floor-image">
+			<image class="image-item" src="http://images.baixingliangfan.cn/homeFloor/20180407/20180407180109_6316.jpg" mode="widthFix"></image>
+			<image class="image-item" src="http://images.baixingliangfan.cn/homeFloor/20180407/20180407180151_6180.jpg" mode="widthFix"></image>
+			<image class="image-item" src="http://images.baixingliangfan.cn/homeFloor/20180407/20180407180257_2378.jpg" mode="widthFix"></image>
+			<image class="image-item" src="http://images.baixingliangfan.cn/homeFloor/20180407/20180407180257_2378.jpg" mode="widthFix"></image>
+			<image class="image-item" src="http://images.baixingliangfan.cn/homeFloor/20180407/20180407180427_8557.jpg" mode="widthFix"></image>
+		</view> -->
+		<view class="floor-image">
+			<image wx:for="{{floor}}" wx:key="goodsId" wx:for-item="floor" class="image-item" src="{{floor.image}}" mode="widthFix"></image>
+		</view>
+	</view>
+</template>

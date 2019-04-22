@@ -1,0 +1,12 @@
+<template name="recommendItem">
+	<view class="goods-item">
+		<image class="goods-image" src="{{image}}" mode="widthFix"></image>
+		<view class="goods-name">
+			<text>{{goodsName}}</text>
+		</view>
+		<view class="goods-price">
+			<text>￥{{mallPrice}}</text> <text class="line-price">(￥{{price}})</text>
+		</view>
+		<van-tag type="danger" class="tag">推荐</van-tag>
+	</view>
+</template>

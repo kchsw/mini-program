@@ -1,0 +1,18 @@
+.hotgoods-item{
+	text-align: center;
+	box-sizing: border-box;
+	padding: 5rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+	margin-bottom: 10rpx;
+	border-radius: 5rpx;
+}
+.hotgoods-name{
+	font-size: 22rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.hotgoods-price{
+	font-size: 24rpx;
+}

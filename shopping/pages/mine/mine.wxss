@@ -1,0 +1,41 @@
+/* pages/mine/mine.wxss */
+page{
+	background-color: #f2f2f2;
+}
+.mine-row{
+	margin-top: 20rpx;
+}
+.mine-menu{
+	display: flex;
+	justify-content: space-around;
+	background: #fff;
+	padding: 30rpx 0;
+}
+.menu-item{
+	text-align: center;
+	font-size: 28rpx;
+}
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5rpx solid #e5017d;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  font-size: 32rpx;
+}
+button {
+	font-size: 24rpx;
+}

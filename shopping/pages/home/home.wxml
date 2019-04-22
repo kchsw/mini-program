@@ -1,0 +1,62 @@
+<!--pages/home/home.wxml-->
+<import src="/templates/recommendItem/recommendItem.wxml" />
+<import src="/templates/floorItem/floorItem.wxml" />
+<import src="/templates/goodsItem/goodsItem.wxml" />
+
+<view class="search">
+    <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+    <input type="text" placeholder="输入商品查找" 
+    placeholder-class="placeholder" value="{{inputValue}}"/>
+    <van-button size="small" class="search-btn">查找</van-button>
+</view>
+<view class="swiper">
+	<swiper class='posts-swiper'
+	    indicator-dots="{{indicatorDots}}"
+	    autoplay="{{autoplay}}"
+	    indicator-active-color="{{indicatorActiveColor}}"
+	>
+    <block wx:for="{{slides}}" wx:key="goodsId">
+      <swiper-item>
+        <image src="{{item.image}}" class='posts-image' mode="widthFix"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="category">
+	<view class="category-item" wx:for="{{category}}" wx:key="mallCategoryId">
+		<image class="category-image" src="{{item.image}}" mode="widthFix"></image>
+		<text class="category-text">{{item.mallCategoryName}}</text>
+	</view>
+</view>
+<view class="advert">
+	<image class="" src="{{advertPic}}" class="advert-image" mode="widthFix"></image>
+</view>
+<view class="recommend">
+	<view class="recommend-title">
+		<text>商品推荐</text>
+	</view>
+	<view class="recommend-goods">
+		<scroll-view class="container" scroll-x="true" style="width: 100%">
+			<block wx:for="{{recommend}}" wx:key="goodsId">
+				<template is="recommendItem" data="{{...item}}"/>
+			</block>		
+		</scroll-view>
+	</view>
+</view>
+<view class="floor">
+	<block wx:for="{{floors}}" wx:key="name" wx:for-index="index">
+		<template is="floorItem" data="{{...item, index: index}}"/>
+	</block>
+</view>
+<view class="hotGoods">
+	<view class="hotGoods-title">
+		<text>- 热卖商品 -</text>
+	</view>
+	<van-row gutter="5" class="hotgoods-row">
+		<block wx:for="{{hotGoods}}" wx:key="goodsId">
+			<van-col span="12">
+		    	<template is="goodsItem" data="{{...item}}"/>
+		    </van-col>
+		</block>    
+	</van-row>
+</view>

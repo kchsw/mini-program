@@ -13,7 +13,7 @@ Page({
     searchResult: {},
     containerShow: true,
     searchPanelShow: false,
-    inputValiue: ''
+    inputValue: ''
   },
 
   /**
