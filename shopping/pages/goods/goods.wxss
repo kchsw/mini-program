@@ -1,0 +1,37 @@
+/* pages/goods/goods.wxss */
+page{
+	background-color: #f2f2f2;
+}
+.goods{
+	margin-bottom: 100rpx;
+}
+.goods-desc{
+	padding: 15rpx;
+	background-color: #fff;
+	margin: 10rpx 0;
+}
+.goods-price{
+	font-size: 36rpx;
+	color: red;
+	font-weight: bold;
+	margin-bottom: 5rpx;
+}
+.line-price{
+	font-size: 28rpx;
+	color: #ccc;
+	text-decoration-line: line-through;
+	margin-left: 10rpx;
+	font-weight: normal;
+}
+.goods-name{
+	font-size: 32rpx;
+}
+.van-tag{
+	margin-left: 10rpx;
+}
+.detail-image{
+	font-size: 0;
+}
+.detail-image image{
+	display: block;
+}

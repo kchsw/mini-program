@@ -1,1 +1,31 @@
 /* pages/category/category.wxss */
+@import "/templates/goodsItem/goodsItem.wxss"
+page{
+	background-color: #f2f2f2;
+}
+.row{
+	height: calc(100vh - 88rpx);
+}
+.left-row{
+	width: 100%;
+	box-sizing: border-box;
+	border-right: 2px solid #fff;
+	text-align: center;
+}
+.right-row{
+	padding: 0 10rpx;
+}
+.left-tab{
+	width: 100%;
+	font-size: 30rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	background-color: #fff;
+	border-bottom: 2rpx solid #eee;
+	box-sizing: border-box;
+}
+.active{
+	color: red;
+	background-color: #f2f2f2;
+	border-bottom: 2rpx solid #fff;
+}

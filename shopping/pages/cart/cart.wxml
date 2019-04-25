@@ -1,4 +1,6 @@
 <!--pages/cart/cart.wxml-->
+<import src="/templates/cartItem/cartItem.wxml" />
+
 <view class="cart">
 	<view wx:if="{{isEmpty}}">
 		<view class="cart-tip">
@@ -7,5 +9,20 @@
 		</view>
 		<van-button type="danger" catchtap='onbtnTap'>去逛一逛吧~</van-button>
 	</view>
-	
+	<view class="cart-list">
+		<block wx:for="{{cartList}}" wx:key="ID">
+			<template is="cartItem" data="{{...item}}"/>
+		</block>
+	</view>
+	<view class="cart-submit">
+		<van-submit-bar
+		  price="{{sum}}"
+		  button-text="结算"
+		  bind:submit="onSubmit"
+		>
+			<van-checkbox checked-color="#e5017d" class="check" value="{{checkAll}}" bind:change="onCheckAll">全选</van-checkbox>
+		</van-submit-bar>
+
+	</view>
+
 </view>

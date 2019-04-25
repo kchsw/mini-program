@@ -108,6 +108,17 @@ Page({
       item.price = formatPrice(item.price)
     })
     return arr
+  },
+
+  goToGoods: function(){
+    wx.navigateTo({
+      url: '../goods/goods?id=0032862950ca44d397e58a6fb10a3e38',
+    })
+  },
+  goToCategory: function(){
+    wx.switchTab({
+      url: '../category/category',
+    })
   }
 
 })

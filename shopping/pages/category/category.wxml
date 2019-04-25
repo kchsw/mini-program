@@ -1,2 +1,41 @@
 <!--pages/category/category.wxml-->
-<text>暂无数据</text>
+<import src="/templates/goodsItem/goodsItem.wxml" />
+<!-- <text>暂无数据</text>
+<van-stepper value="{{ value }}" bind:change="onChange" /> -->
+<view class="category">
+	<van-tabs swipeable animated>
+	    <van-tab title="新鲜水果">
+	    	<van-row>
+			  	<van-col span="7" class="col">
+			  		<view class="left-row row">
+			  			<view class="left-tab {{active===0 ? 'active' : ''}}" catch:tap="selectSub" data-index="{{0}}">全部</view>
+			  			<!-- <view class="left-tab">热带水果</view>
+			  			<view class="left-tab">时令水果</view>
+			  			<view class="left-tab">柑橘类</view>
+			  			<view class="left-tab">蔷薇科类</view> -->
+			  			<view class="left-tab {{active===item.Id ? 'active' : ''}}" wx:for="{{categorySub}}" wx:key="Id" catch:tap="selectSub" data-index="{{item.Id}}">{{item.Sub}}</view>
+			  		</view>
+			  	</van-col>
+			  	<van-col span="17" class="col">
+			  		<view class="right-row row">
+				  		<scroll-view scroll-y style="height: 100%;">
+				  			<!-- <view wx:for="{{10}}" wx:for-index="index">{{index}}</view> -->
+				  			<van-row gutter="5">
+				  				<van-col span="12" wx:for="{{10}}" wx:key="*this">
+					  				<!-- <view catch:tap="goToGoods"> -->
+					  					<template is="goodsItem" data="{{...goods}}"/>
+					  				<!-- </view>	 -->				
+							    </van-col>
+				  			</van-row>
+				  		</scroll-view>
+				  	</view>
+			  	</van-col>
+			</van-row>
+	    </van-tab>
+	  	<van-tab title="中外名酒">内容 2</van-tab>
+	  	<van-tab title="营养奶品">内容 3</van-tab>
+	  	<van-tab title="个人护理">内容 4</van-tab>
+	  	<van-tab title="食品饮料">内容 4</van-tab>
+	</van-tabs>
+</view>
+

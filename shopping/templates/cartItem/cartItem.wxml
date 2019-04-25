@@ -1,0 +1,26 @@
+<template name="cartItem">
+	<view class="cart-item">
+		<view class="cart-check">
+			<van-checkbox checked-color="#e5017d" value="{{checked}}" bind:change="oncheck" data-ID="{{ID}}"></van-checkbox>
+		</view>
+		<view class="cart-image">
+			<image class="" src="{{image}}" mode="widthFix" style="width: 100%"></image>
+		</view>
+		<view class="cart-desc">
+			<view class="item-name">{{name}}</view>
+			<view class="item-price">
+				<text>￥{{present_price}}</text>
+				<van-stepper data-ID="{{ID}}"
+				  value="{{count}}"
+				  integer
+				  min="0"
+				  step="1"
+				  bind:plus="addChange"
+				  bind:minus="decChange"
+				/>
+			</view>
+			<view class="item-total"><text>小计:<text class="item-sum">￥{{present_price*count}}</text></text> <van-icon color="red" size="22px" name="delete" bind:click="deleteItem" data-ID="{{ID}}"/></view>
+		</view>
+		
+	</view>
+</template>

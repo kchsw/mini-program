@@ -1,0 +1,49 @@
+<!--pages/goods/goods.wxml-->
+<view class="goods">
+	<view class="goods-info">
+		<view class="goods-banner">
+			<image class="" src="{{goods.image}}" mode="widthFix" style="width: 100%"></image>
+		</view>
+		<view class="goods-desc">
+		    <view class="goods-price">
+				<text>￥{{goods.present_price}}</text> <text class="line-price">(￥{{goods.ori_price}})</text>
+			</view>
+			<view class="goods-name">
+				<text>{{goods.name}}</text><van-tag round type="danger"> 包邮</van-tag><van-tag round type="danger">爆款</van-tag>
+			</view>
+		</view>
+	</view>
+	<view class="goods-detail">
+		<van-tabs active="{{ active }}" animated swipeable sticky>
+		  	<van-tab title="详情" >
+			  	<view class="detail-image">
+			  		<image wx:for="{{goods.detail}}" wx:key="*this"  src="{{item}}" mode="widthFix" style="width: 100%"></image>
+			  	</view>
+		  	</van-tab>
+		  	<van-tab title="评论">暂无评论</van-tab>
+		</van-tabs>
+	</view>
+
+	<van-goods-action>
+	  <van-goods-action-icon
+	    icon="chat-o"
+	    text="客服"
+	    bind:click="onClickIcon"
+	  />
+	  <van-goods-action-icon
+	    icon="cart-o"
+	    text="购物车"
+	    bind:click="goToCart"
+	  />
+	  <van-goods-action-button
+	    text="加入购物车"
+	    type="warning"
+	    bind:click="addToCart"
+	    data-item="{{goods}}"
+	  />
+	  <van-goods-action-button
+	    text="立即购买"
+	    bind:click="onClickButton"
+	  />
+	</van-goods-action>
+</view>

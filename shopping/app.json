@@ -1,12 +1,13 @@
 {
   "pages": [
+    
     "pages/home/home",
+    "pages/category/category",
     "pages/mine/mine",
     "pages/index/index",
     "pages/logs/logs",
     "pages/cart/cart",
-    "pages/category/category"
-   
+    "pages/goods/goods"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,7 +22,15 @@
     "van-col": "/miniprogram_npm/vant-weapp/col/index",
     "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
     "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
-    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index"
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
+    "van-stepper": "/miniprogram_npm/vant-weapp/stepper/index",
+    "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
+    "van-goods-action": "/miniprogram_npm/vant-weapp/goods-action/index",
+    "van-goods-action-icon": "/miniprogram_npm/vant-weapp/goods-action-icon/index",
+    "van-goods-action-button": "/miniprogram_npm/vant-weapp/goods-action-button/index",
+    "van-submit-bar": "/miniprogram_npm/vant-weapp/submit-bar/index",
+    "van-checkbox": "/miniprogram_npm/vant-weapp/checkbox/index"
   },
   "tabBar": {
     "borderStyle": "white",
@@ -52,5 +61,6 @@
         "selectedIconPath": "assets/images/tab/account-box-fill.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

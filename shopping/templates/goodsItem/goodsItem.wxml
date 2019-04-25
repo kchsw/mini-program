@@ -1,5 +1,5 @@
 <template name="goodsItem">
-	<view class="hotgoods-item">
+	<view class="hotgoods-item" catch:tap="goToGoods">
 		<image class="hotgoods-image" src="{{image}}" mode="widthFix" style="width: 90%"></image>
 		<view class="hotgoods-name">
 			<text>{{name}}</text>

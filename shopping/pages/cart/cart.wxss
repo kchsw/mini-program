@@ -1,8 +1,13 @@
 /* pages/cart/cart.wxss */
+@import "/templates/cartItem/cartItem.wxss"
+
 .cart{
 	text-align: center;
 }
 .cart-tip{
 	color: #ccc;
 	padding: 350rpx 0 200rpx;
+}
+.check{
+	margin-left: 40rpx;
 }

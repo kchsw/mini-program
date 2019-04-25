@@ -1,5 +1,5 @@
 <template name="recommendItem">
-	<view class="goods-item">
+	<view class="goods-item" catch:tap="goToGoods">
 		<image class="goods-image" src="{{image}}" mode="widthFix"></image>
 		<view class="goods-name">
 			<text>{{goodsName}}</text>

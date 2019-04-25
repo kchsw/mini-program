@@ -23,7 +23,7 @@
   </swiper>
 </view>
 <view class="category">
-	<view class="category-item" wx:for="{{category}}" wx:key="mallCategoryId">
+	<view class="category-item" wx:for="{{category}}" wx:key="mallCategoryId" catch:tap="goToCategory">
 		<image class="category-image" src="{{item.image}}" mode="widthFix"></image>
 		<text class="category-text">{{item.mallCategoryName}}</text>
 	</view>
