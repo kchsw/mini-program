@@ -1,4 +1,5 @@
 <!--pages/goods/goods.wxml-->
+<wxs src="../../utils/format.wxs" module="format"/>
 <view class="goods">
 	<view class="goods-info">
 		<view class="goods-banner">
@@ -6,7 +7,7 @@
 		</view>
 		<view class="goods-desc">
 		    <view class="goods-price">
-				<text>￥{{goods.present_price}}</text> <text class="line-price">(￥{{goods.ori_price}})</text>
+				<text>￥{{format.formatPrice(goods.present_price)}}</text> <text class="line-price">(￥{{format.formatPrice(goods.ori_price)}})</text>
 			</view>
 			<view class="goods-name">
 				<text>{{goods.name}}</text><van-tag round type="danger"> 包邮</van-tag><van-tag round type="danger">爆款</van-tag>

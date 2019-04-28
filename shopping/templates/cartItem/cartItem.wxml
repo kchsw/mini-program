@@ -1,3 +1,4 @@
+<wxs src="../../utils/format.wxs" module="format"/>
 <template name="cartItem">
 	<view class="cart-item">
 		<view class="cart-check">
@@ -9,7 +10,7 @@
 		<view class="cart-desc">
 			<view class="item-name">{{name}}</view>
 			<view class="item-price">
-				<text>￥{{present_price}}</text>
+				<text>￥{{format.formatPrice(present_price)}}</text>
 				<van-stepper data-ID="{{ID}}"
 				  value="{{count}}"
 				  integer
@@ -19,7 +20,7 @@
 				  bind:minus="decChange"
 				/>
 			</view>
-			<view class="item-total"><text>小计:<text class="item-sum">￥{{present_price*count}}</text></text> <van-icon color="red" size="22px" name="delete" bind:click="deleteItem" data-ID="{{ID}}"/></view>
+			<view class="item-total"><text>小计:<text class="item-sum">￥{{format.formatPrice(present_price*count)}}</text></text> <van-icon color="red" size="22px" name="delete" bind:click="deleteItem" data-ID="{{ID}}"/></view>
 		</view>
 		
 	</view>

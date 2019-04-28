@@ -1,0 +1,15 @@
+var formatPrice = function(price){
+	if(!price) return
+	return price.toFixed(2) || 0.00
+}
+
+var limit = function(array, length){
+	if(!array) return 
+	return array.slice(0, length)
+}
+
+
+module.exports = {
+	formatPrice: formatPrice,
+	limit: limit
+}
