@@ -1,0 +1,26 @@
+/* pages/classic/classic.wxss */
+
+.section{
+	height: 100%;
+}
+.flex-wrp{
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/*justify-content: center;*/
+	/*align-content: space-between;*/
+}
+.flex-item{
+	width: 600rpx;
+	height: 200rpx;
+}
+.bc_green{
+	background-color: green;
+}
+.bc_red{
+	background-color: red;
+}
+.bc_blue{
+	background-color: blue;
+}

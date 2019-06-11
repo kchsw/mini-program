@@ -1,0 +1,10 @@
+<!--pages/classic/classic.wxml-->
+<!-- <view class="section">
+  <view class="flex-wrp">
+    <view class="flex-item bc_green">1</view>
+    <view class="flex-item bc_red">2</view>
+    <view class="flex-item bc_blue">3</view>
+  </view>
+</view> -->
+<v-like></v-like>
+
