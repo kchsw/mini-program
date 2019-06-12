@@ -1,0 +1,8 @@
+<!--components/classic/essay/index.wxml-->
+<!--components/classic/movie/index.wxml-->
+<view class="essay-container">
+	<image class="iamge" src="{{img}}" mode="widthFix"></image>
+	<image class="tag" src="images/essay@tag.png" mode="widthFix"></image>
+	<text class="content">{{content}}</text>
+</view>
+

@@ -6,5 +6,15 @@
     <view class="flex-item bc_blue">3</view>
   </view>
 </view> -->
-<v-like></v-like>
+<view class="classic-container">
+	<view class="header">
+		<v-epsoide class="epsoide" index="{{classic.index}}"></v-epsoide>
+		<v-like class="like" bind:like="onLike"  count="{{likeCount}}" like="{{likeStatus}}"></v-like>
+	</view>
+	<v-movie wx:if="{{classic.type==100}}" class="movie" img="{{classic.image}}" content="{{classic.content}}"></v-movie>
+	<v-essay wx:if="{{classic.type==300}}" class="essay" img="{{classic.image}}" content="{{classic.content}}"></v-essay>
+	<v-music wx:if="{{classic.type==200}}" class="music" img="{{classic.image}}" content="{{classic.content}}" src="{{classic.url}}" title="{{classic.title}}" ></v-music>
+	<v-navi bind:left="onNext" bind:right="onPrevious" class="navi" title="{{classic.title}}" first="{{first}}" latest="{{latest}}"></v-navi>
+</view>
 
+ 
