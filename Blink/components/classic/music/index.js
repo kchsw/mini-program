@@ -20,7 +20,14 @@ Component({
   data: {
     pauseSrc: 'images/player@playing.png',
     playSrc: 'images/player@waitting.png',
-    palying: false
+    playing: false
+  },
+  // detached(e){
+  //   mMgr.stop()
+  // }
+  attached(e){
+    this._recoverPlaying()
+    this._monitorSwitchSwitch()
   },
 
   /**
@@ -28,22 +35,56 @@ Component({
    */
   methods: {
     onPlay(e){
-      if(!this.data.palying){
+      if(!this.data.playing){
         this.setData({
-          palying: true
+          playing: true
         })
+        if(mMgr.src == this.properties.src){
+          mMgr.play()
+        }else{
+          mMgr.src = this.properties.src
+        }
         mMgr.title = this.properties.title
-        mMgr.src = this.properties.src
       }else{
         this.setData({
-          palying: false
+          playing: false
         })
         mMgr.pause()
       }
       
+    },
+    _recoverPlaying(){
+      if(mMgr.paused){
+        this.setData({
+          playing: false
+        })
+        return 
+      }
+      if(mMgr.src == this.properties.src){
+        if(!mMgr.paused){
+          this.setData({
+            playing: true
+          })
+        }
+      }
+    },
+
+    // 有问题
+    _monitorSwitchSwitch(){     
+      mMgr.onPlay(() => {
+        this._recoverPlaying()
+      })
+      mMgr.onPause(() => {
+        this._recoverPlaying()
+      })
+      mMgr.onStop(() => {
+        this._recoverPlaying()
+      })
+      mMgr.onEnded(()=>{
+        this._recoverPlaying()
+      })
     }
-  },
-  detached(e){
-    mMgr.stop()
   }
+  
+  
 })

@@ -1,0 +1,21 @@
+<!--pages/book/book.wxml-->
+<view class="book-container">
+	<view class="header">
+		<view class="box">
+			<image class="search-icon" src="/images/icon/search.png" mode="widthFix"></image>
+			<text>搜索书籍</text>
+		</view>
+	</view>
+	<view class="sub-container">
+		<image class="quality" src="/images/book/quality.png" mode="widthFix"></image>
+		<view class="books-container">
+			<block wx:for="{{books}}" wx:key="title">
+				<v-book class="book" book="{{item}}"></v-book>
+			</block>
+		</view>		
+	</view>
+
+	
+	
+</view>
+

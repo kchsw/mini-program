@@ -8,7 +8,9 @@
 	width: 422rpx;
 	height: 422rpx;
 	margin-top: 60rpx;
-	border-radius: 50%;
+	/*border-radius: 50%;*/
+	border-radius: 70%;
+	overflow: hidden;
 }
 .player-img{
 	width: 120rpx;
@@ -26,4 +28,22 @@
 .content{
 	font-size: 36rpx;
 	max-width: 550rpx;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotation {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
 }
