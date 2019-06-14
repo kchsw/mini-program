@@ -9,7 +9,12 @@
 <view class="classic-container">
 	<view class="header">
 		<v-epsoide class="epsoide" index="{{classic.index}}"></v-epsoide>
-		<v-like class="like" bind:like="onLike"  count="{{likeCount}}" like="{{likeStatus}}"></v-like>
+		<view class="like-container">
+			<v-like class="like" bind:like="onLike"  count="{{likeCount}}" like="{{likeStatus}}"></v-like>
+			<v-button open-type="share" class="share-btn">
+				<image class="share" src="/images/icon/share.png" mode="widthFix" slot="img"></image>
+			</v-button>
+		</view>
 	</view>
 	<v-movie wx:if="{{classic.type==100}}" class="movie" img="{{classic.image}}" content="{{classic.content}}"></v-movie>
 	<v-essay wx:if="{{classic.type==300}}" class="essay" img="{{classic.image}}" content="{{classic.content}}"></v-essay>

@@ -1,18 +1,81 @@
 // pages/my/my.js
+import { BookModel } from '../../models/book.js'
+import { LikeModel } from '../../models/like.js'
+import { ClassicModel } from '../../models/classic.js'
+const book = new BookModel()
+const like = new LikeModel()
+let classic = new ClassicModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    authorized: false,
+    userInfo: {},
+    bookCount: 0,
+    classics: []
+  },
 
+  // getUserInfo(e){
+  //   // console.log(e.detail)
+  // },
+  onGetUserInfo(e){
+    // let userInfo = e.detail
+    // console.log(userInfo)
+    console.log(1)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // wx.getUserInfo({
+    //   success: (res) => {
+    //     console.log(res)
+    //   },
+    //   fail: (res) => {
+        
+    //   },
+    //   complete: (res) => {
+        
+    //   }
+    // })
+    this.userAuthorized()
+    this.getMyBookCount()
+    this.getMyFavor()
+  },
 
+  userAuthorized(){
+    wx.getSetting({
+      success: (res) => {
+        if(res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            success: (res) => {
+              this.setData({
+                authorized: true,
+                userInfo: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
+  },
+
+  getMyBookCount(){
+    book.getMyBookCount().then(res => {
+      this.setData({
+        bookCount: res.count
+      })
+    })
+  },
+  getMyFavor(){
+    classic.getMyFavor(res => {
+      this.setData({
+        classics: res
+      })
+    })
   },
 
   /**

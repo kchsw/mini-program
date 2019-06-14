@@ -50,6 +50,9 @@
 	    </view>
 	    <view class="like-container">
 	    	<v-like bind:like="onLike" class="like" like="{{like}}" count="{{count}}" />
+	    	<v-button open-type="share" class="share-btn">
+				<image class="share" src="/images/icon/share.png" mode="widthFix" slot="img"></image>
+			</v-button>
 	    </view>
 	</view>
 

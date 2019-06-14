@@ -20,24 +20,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '努力加载中',
+      mask: false,
+    })
     const { id } = options
     // const id = 7
-    book.getDetail(id).then(res => {
-      this.setData({
-        book: res
-      })
-    })
-    book.getComments(id).then(res => {
-      this.setData({
-        comments: res.comments
-      })
-    })
-    book.getLikeStatus(id).then(res => {
-      this.setData({
-        like: res.like_status,
-        count: res.fav_nums
-      })
-    })
+    // book.getDetail(id).then(res => {
+    //   this.setData({
+    //     book: res
+    //   })
+    // })
+    // book.getComments(id).then(res => {
+    //   this.setData({
+    //     comments: res.comments
+    //   })
+    // })
+    // book.getLikeStatus(id).then(res => {
+    //   this.setData({
+    //     like: res.like_status,
+    //     count: res.fav_nums
+    //   })
+    // })
+    const detail = book.getDetail(id)
+    const comments = book.getComments(id)
+    const like = book.getLikeStatus(id)
+    const promiseList = [detail, comments, like]
+    Promise.all(promiseList)
+            .then(res => {
+              this.setData({
+                book: res[0],
+                comments: res[1].comments,
+                like: res[2].like_status,
+                count: res[2].fav_nums
+              })
+              wx.hideLoading()
+            })
   },
 
   onLike(e){
