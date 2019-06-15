@@ -32,6 +32,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onTap(e){
+      wx.navigateTo({
+        url: `/pages/classic-one/classic-one?id=${this.data.classic.id}&type=${this.data.classic.type}`
+      })
+    }
   }
 })

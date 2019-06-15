@@ -5,12 +5,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/book-detail/book-detail"
+    "pages/book-detail/book-detail",
+    "pages/classic-one/classic-one"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "end",
+    "navigationBarTitleText": "Endless",
     "navigationBarTextStyle": "black",
     "navigationStyle": "default",
     "enablePullDownRefresh": false,

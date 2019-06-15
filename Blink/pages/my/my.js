@@ -21,9 +21,11 @@ Page({
   //   // console.log(e.detail)
   // },
   onGetUserInfo(e){
-    // let userInfo = e.detail
-    // console.log(userInfo)
-    console.log(1)
+    let userInfo = e.detail
+    this.setData({
+      userInfo,
+      authorized: true
+    })
   },
 
   /**

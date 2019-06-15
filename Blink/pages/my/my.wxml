@@ -1,7 +1,7 @@
 <!--pages/my/my.wxml-->
 <view class="container">
 	<image class="bg" src="/images/my/my@bg.png" mode="widthFix"></image>
-	<v-button open-type="getUserInfo" class="avatar-position" bing:getuserinfo="onGetUserInfo" wx:if="{{!authorized}}">
+	<v-button open-type="getUserInfo" class="avatar-position" bind:getuserinfo="onGetUserInfo" wx:if="{{!authorized}}">
 		<image class="avatar" src="/images/my/my.png" mode="widthFix" slot="img"></image>
 	</v-button>
 	<view class="avatar-container avatar-position" wx:if="{{authorized}}">
@@ -22,7 +22,7 @@
 	<view class="like-container">
 		<image class="headline" src="/images/my/like.png" mode="widthFix"></image>
 		<view class="preview-container">
-	      	<block wx:for="{{classics}}">
+	      	<block wx:for="{{classics}}" wx:key="">
 	        	<v-preview bind:tap="onPreviewTap" class="preview" classic="{{item}}" />
 	      	</block>
 	    </view>

@@ -44,6 +44,16 @@ class ClassicModel extends HTTP{
 		}
 	}
 
+	getOneClassic(type, id, callback){
+		this.request({
+			url: 'classic/' + type + '/' + id,
+			success: (res) => {
+			    wx.setStorageSync(this._getKey(res.index), res)
+			    callback(res)
+			}
+		})		
+	}
+
 	isFirst(index){
 		return index == 1 ? true : false
 	}

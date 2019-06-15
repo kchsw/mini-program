@@ -19,8 +19,6 @@
 .tag{
   margin-left:20rpx;
   margin-top:-2rpx;
-  height:40rpx;  
-  width:72rpx ;
   font-size:24rpx;
   background-color:#f7f7f7 !important;
 }
